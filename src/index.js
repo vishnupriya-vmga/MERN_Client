@@ -1,23 +1,24 @@
-import React, { useEffect, useReducer, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
-import Login from './components/Login';
-import TodoList from './components/TodoList';
-import Feedback from './components/Feedback';
-import '../src/index.css'
-import {BrowserRouter as Router,
-  Routes,
-  Link,
-  Route} from 'react-router-dom';
+import Home from './components/Home';
+
+import './index.css';
+import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 import Register from './components/Register';
-//import Example from './Example';
-const root =document.getElementById('root')//root id from index.html
-const VirtualRoot = ReactDOM.createRoot(root);
-VirtualRoot.render(
-  <Router>
-  <Routes>
-      <Route path="/Login" element={<Login />} />
-      <Route path="/Register" element={<Register/>} />
-    </Routes>
-  </Router>
-)
+import Login from './components/Login';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+<div>
+ <Router>
+   <Header/>
+   <Home/> 
+ <Routes>
+ <Route path="/about" element={<h1>About</h1>}/>
+ <Route path="/register" element={<Register/>}/>
+ <Route path="/login" element={<Login/>}/>
+ </Routes>
+ </Router>
+ 
+</div>
+);

@@ -1,8 +1,23 @@
-const handleLogout = async () => {
-    try {
-    await axios.post("http://localhost:3001/users/logout");
-    } catch (error) {
-    console.error("Error logging out:", error);
-    }
-   };
-    <li><button onClick={handleLogout} className="textwhite">Logout</button></li>
+import '../style.css'
+import {Link} from 'react-router-dom'
+
+export default function navbar(){
+    return(
+        
+            <div class="header">
+                <h3>My App</h3>
+                <ul>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li><Link to="/login">Login</Link></li>
+                    <li><Link to="/register">Register</Link></li>
+                    <li><Link to="/logout">logout</Link></li>
+                </ul>
+             
+            </div>
+      
+        
+    )
+   
+}
